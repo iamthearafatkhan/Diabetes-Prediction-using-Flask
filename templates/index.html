@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+    background-image: url('/static/bg.png');
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed when scrolling */
+}
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1); /* Light translucent background */
+            backdrop-filter: blur(10px); /* Apply blur effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari support */
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="glass-effect p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6 text-white">Diabetes Prediction</h1>
+        <form method="POST" action="/predict" class="space-y-4">
+            <div>
+                <label class="block text-gray-200">Age:</label>
+                <input type="number" name="age" step="any" required class="w-full p-2 border rounded">
+            </div>
+
+            <div>
+                <label class="block text-gray-200">Gender:</label>
+                <select name="gender" required class="w-full p-2 border rounded">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-gray-200">Pulse Rate (bpm):</label>
+                <input type="number" name="pulse_rate" step="any" required class="w-full p-2 border rounded">
+            </div>
+
+            <div>
+                <label class="block text-gray-200">Glucose Level (mg/dL):</label>
+                <input type="number" name="glucose" step="any" required class="w-full p-2 border rounded">
+            </div>
+
+            <div>
+                <label class="block text-gray-200">BMI:</label>
+                <input type="number" name="bmi" step="any" required class="w-full p-2 border rounded">
+            </div>
+
+            <div>
+                <label class="block text-gray-200">Family History of Diabetes (0 = No, 1 = Yes):</label>
+                <input type="number" name="family_diabetes" min="0" max="1" required class="w-full p-2 border rounded">
+            </div>
+
+            <div>
+                <label class="block text-gray-200">Hypertensive (0 = No, 1 = Yes):</label>
+                <input type="number" name="hypertensive" min="0" max="1" required class="w-full p-2 border rounded">
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded transition-transform transform hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                Predict
+            </button>
+
+        </form>
+    </div>
+</body>
+</html>

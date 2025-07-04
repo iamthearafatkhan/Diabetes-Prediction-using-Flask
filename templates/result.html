@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('/static/re.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-white bg-opacity-50 p-8 rounded-lg shadow-lg text-center">
+        <h1 class="text-3xl font-bold mb-4">Prediction Result</h1>
+        <p class="text-xl mb-2">You are: <span class="font-bold">{{ result }}</span></p>
+        <p class="text-lg">Prediction Confidence: {{ probability * 100 }}%</p>
+        <a href="/" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded">Try Again</a>
+    </div>
+</body>
+</html>
